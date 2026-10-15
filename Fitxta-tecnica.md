@@ -53,3 +53,33 @@ sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
 ```
 
 ![Cap6](/Img/6.png)
+
+### 4.2 Creació de l'arxiu d'usuaris/hashes (unshadow)
+
+Es combinen `passwd` i `shadow` en un únic arxiu amb el format que espera John:
+
+![Cap7](/Img/7.png)
+![Cap8](/Img/8.png)
+
+```bash
+sudo unshadow passwd shadow > passwords-noah.txt
+```
+![Cap9](/Img/9.png)
+
+
+### 4.3 Especificar l'algorisme de hash (opcional)
+
+John detecta l'algorisme automàticament analitzant la capçalera del hash (`$6$` SHA-512, `$1$` MD5, `$y$` yescrypt, etc.), però especificar-ho amb `--format` redueix el temps de processament quan es coneix d'entrada:
+
+```bash
+john --format=sha512crypt passwords-noah.txt
+```
+
+### 4.4 Atac "Single Crack"
+
+Primera fase recomanada en qualsevol auditoria. No fa servir cap diccionari extern: agafa el nom d'usuari i la informació associada a `/etc/passwd` (nom complet, directori home) i hi aplica regles de permutació (majúscules/minúscules, addició de números, inversió de caràcters...). És molt ràpid i efectiu per detectar negligències bàsiques.
+
+```bash
+john --single passwords-noah.txt
+```
+![Cap10](/Img/10.png)

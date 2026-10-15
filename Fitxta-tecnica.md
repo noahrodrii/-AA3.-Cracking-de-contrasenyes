@@ -93,6 +93,7 @@ Amb el diccionari descomprimit, s'executa l'atac indicant-ne la ruta:
 ```bash
 john --format=crypt --wordlist=/usr/share/wordlists/rockyou.txt passwords-noah.txt
 ```
+
 ![Cap12](/Img/12.png)
 
 ### 4.6 Atac incremental numèric (màscara 4-8 dígits)
@@ -105,3 +106,17 @@ john --incremental=Digits --min-len=4 --max-len=8 passwords-noah.txt
 ```
 
 ![Cap13](/Img/13.png)
+
+---
+
+## Veure les contrasenyes crackejades
+
+Les contrasenyes trobades es guarden a `~/.john/john.pot`. Per mostrar-les associades a cada usuari:
+
+```bash
+john --show passwords.noah.txt
+```
+
+![Cap14](/Img/14.png)
+
+---

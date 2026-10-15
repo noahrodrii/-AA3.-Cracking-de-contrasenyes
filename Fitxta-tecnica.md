@@ -14,8 +14,7 @@ Auditar la seguretat de les contrasenyes dels usuaris d'una màquina virtual Ubu
 - Màquina víctima: Ubuntu Server (OVA importada), interfície de xarxa en mode **NAT**.
 - Màquina atacant: Kali Linux 2, interfície de xarxa també en mode **NAT**, a la mateixa subxarxa que la víctima.
 
-<!-- CAPTURA 1: Configuració de xarxa NAT de les dues màquines virtuals -->
 ![Cap1](/Img/1.png)
+
 ![Cap2](/Img/2.png)
 ---
-

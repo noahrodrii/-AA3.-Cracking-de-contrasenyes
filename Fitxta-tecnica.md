@@ -41,3 +41,15 @@ scp /etc/passwd kali@10.2.0.15:.
 > - Contrasenya al GRUB per evitar aquest tipus d'atac.
 
 ---
+
+## 4. Fase 2 — Cracking de contrasenyes amb John the Ripper
+
+### 4.1 Descompressió del diccionari RockYou
+
+El diccionari `rockyou.txt` ve integrat per defecte a Kali, però es troba comprimit en format `.gz` per estalviar espai. Cal descomprimir-lo abans del primer ús:
+
+```bash
+sudo gzip -d /usr/share/wordlists/rockyou.txt.gz
+```
+
+![Cap6](/Img/6.png)

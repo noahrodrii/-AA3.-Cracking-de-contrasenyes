@@ -120,3 +120,13 @@ john --show passwords.noah.txt
 ![Cap14](/Img/14.png)
 
 ---
+
+## Prova per crackejar la sisena contrasenya
+
+Vaig provar de diferents maneras crackejar la ultima contrasenya, amb diferents rules un altre diccionari, pero res.
+
+![Cap15](/Img/15.png)
+
+![Cap16](/Img/16.png)
+
+![Cap17](/Img/17.png)

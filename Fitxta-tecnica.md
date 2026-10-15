@@ -80,6 +80,28 @@ john --format=sha512crypt passwords-noah.txt
 Primera fase recomanada en qualsevol auditoria. No fa servir cap diccionari extern: agafa el nom d'usuari i la informació associada a `/etc/passwd` (nom complet, directori home) i hi aplica regles de permutació (majúscules/minúscules, addició de números, inversió de caràcters...). És molt ràpid i efectiu per detectar negligències bàsiques.
 
 ```bash
-john --single passwords-noah.txt
+john --format=sha512crypt passwords-noah.txt
+john --format=crypt passwords-noah.txt
 ```
 ![Cap10](/Img/10.png)
+![Cap11](/Img/11.png)
+
+### 4.5 Atac de diccionari
+
+Amb el diccionari descomprimit, s'executa l'atac indicant-ne la ruta:
+
+```bash
+john --format=crypt --wordlist=/usr/share/wordlists/rockyou.txt passwords-noah.txt
+```
+![Cap12](/Img/12.png)
+
+### 4.6 Atac incremental numèric (màscara 4-8 dígits)
+
+Per avaluar la resistència davant de contrasenyes tipus PIN o patrons numèrics (dates, codis), es limita l'espai de cerca a dígits (0-9) amb longitud mínima i màxima. Prova sistemàticament totes les combinacions des de `0000` fins a `99999999`:
+No vaig trobar res.
+
+```bash
+john --incremental=Digits --min-len=4 --max-len=8 passwords-noah.txt
+```
+
+![Cap13](/Img/13.png)
